@@ -1,6 +1,6 @@
 # 📄 TEMPLATE LAPORAN PROYEK: PENGEMBANGAN WEB SERVER DAN APLIKASI SEDERHANA
 
-**Proyek:** [JUDUL PROYEK KELOMPOK]
+**Proyek:** [JUDUL PROYEK KELOMPOK KALIAN]
 
 Proyek ini dibuat untuk memenuhi tugas mata pelajaran **[NAMA MATA PELAJARAN]** mengenai *deployment* dan konfigurasi *web server* serta implementasi keamanan SSL.
 
@@ -36,10 +36,10 @@ Kami menggunakan **[NAMA WEB SERVER]**. Berikut langkah-langkah utamanya:
 
 * **Instalasi:**
     ```bash
-    # [Tuliskan perintah instalasi Web Server kalian, contoh: sudo apt install nginx -y]
+    # [Tuliskan perintah instalasi Web Server Kalian, contoh: sudo apt install nginx -y]
     ```
 * **Konfigurasi Virtual Host/Server Block:**
-    [Jelaskan secara singkat penyesuaian konfigurasi yang dilakukan pada file utama (`/etc/apache2/sites-available/000-default.conf` atau `/etc/nginx/sites-available/default`)].
+    [Jelaskan secara singkat penyesuaian konfigurasi yang Kalian lakukan pada file utama].
 
 #### 2.3. Konfigurasi PHP
 
@@ -51,42 +51,51 @@ Kami menggunakan **[JENIS PHP: mod_php / php-fpm / lsphp]** untuk mengintegrasik
     sudo apt install php-fpm php-mysql
     ```
 * **Integrasi:**
-    [Jelaskan langkah-langkah integrasi (misalnya, mengaktifkan `proxy_pass` ke `php-fpm.sock` di Nginx, atau mengaktifkan `mod_php` di Apache)].
+    [Jelaskan langkah-langkah integrasi].
 
 #### 2.4. Implementasi SSL (HTTPS)
 
 Untuk mengaktifkan akses HTTPS, kami membuat *self-signed certificate*.
 
 1.  Membuat direktori untuk *certificate*.
-    ```bash
-    # [Tuliskan perintah membuat direktori]
-    ```
 2.  Membuat *Key* dan *Certificate* menggunakan OpenSSL.
-    ```bash
-    # [Tuliskan perintah OpenSSL yang digunakan]
-    ```
 3.  Memodifikasi konfigurasi *Web Server* untuk menggunakan port **443** dan menunjuk ke *certificate* yang telah dibuat.
 
 ---
 
-### 3. Dokumentasi Konten Website
+### 3. Analisis Web Server
 
-Seluruh *source code* (Halaman Utama dan Halaman Profil) yang berada di *document root* server (`/var/www/html/`) telah disalin dan di-*commit* ke dalam folder `/html` di *repository* GitHub ini.
+Berdasarkan pengalaman kami dalam proyek ini, berikut adalah analisis kelebihan dan kekurangan dari *Web Server* yang kami gunakan:
 
-| Konten Web | Keterangan |
-| :--- | :--- |
-| `html/index.[php/html]` | Halaman utama kelompok. |
-| `html/[nama_anggota]` | Folder yang berisi halaman profil masing-masing anggota. |
-| Bahasa yang digunakan | HTML, CSS, dan PHP. |
+| Aspek | Kelebihan ([NAMA WEB SERVER]) | Kekurangan ([NAMA WEB SERVER]) |
+| :--- | :--- | :--- |
+| **Performa & Kecepatan** | [Tuliskan kelebihannya. Contoh: Mampu menangani banyak koneksi bersamaan (Nginx).] | [Tuliskan kekurangannya. Contoh: Kurang efisien dalam melayani konten statis (Apache).] |
+| **Kemudahan Konfigurasi**| [Tuliskan kelebihannya. Contoh: Konfigurasi yang terpusat dan modular (Apache).] | [Tuliskan kekurangannya. Contoh: Kurva belajar yang lebih curam karena sintaks baru (Nginx).] |
+| **Fitur & Modularitas** | [Tuliskan kelebihannya.] | [Tuliskan kekurangannya.] |
 
 ---
 
-### 4. Dokumentasi Video Pengerjaan
+### 4. Refleksi Proyek: Kesan dan Kendala
 
-Seluruh proses pengerjaan, mulai dari penyiapan VM hingga pengujian akses HTTPS dan *commit* kode, telah direkam dan diunggah ke YouTube.
+#### 4.1. Kesan Selama Proses Pengerjaan
+
+[Tuliskan kesan anggota kelompok, misalnya: "Kami sangat senang karena proyek ini memberikan pemahaman langsung tentang proses deployment server yang sesungguhnya. Proses kolaborasi di GitHub juga mengajarkan pentingnya version control."]
+
+#### 4.2. Kendala dan Solusi yang Diterapkan
+
+| Kendala yang Kalian Hadapi | Solusi yang Ditemukan |
+| :--- | :--- |
+| [Contoh: Kesulitan mengintegrasikan PHP-FPM dengan Nginx.] | [Contoh: Kami mencari referensi dokumentasi resmi Nginx dan memastikan socket file PHP-FPM memiliki izin yang benar.] |
+| [Tuliskan kendala teknis atau kolaborasi lain yang Kalian hadapi.] | [Jelaskan solusi spesifik Kalian.] |
+
+---
+
+### 5. Dokumentasi Video Pengerjaan
+
+Seluruh proses pengerjaan telah direkam dan diunggah ke YouTube.
 
 **Link Video YouTube:**
 
-[![Thumbnail Video Pengerjaan](https://img.youtube.com/vi/1-qlNtQS1OA/0.jpg)](https://www.youtube.com/watch?v=1-qlNtQS1OA)
+[![Thumbnail Video Pengerjaan](https://img.youtube.com/vi/**[ID_VIDEO_YOUTUBE_KALIAN]**/0.jpg)](**[LINK_LENGKAP_VIDEO_YOUTUBE_KALIAN]**)
 
-**PETUNJUK:** Ganti `[ID_VIDEO_YOUTUBE]` dan `[LINK_LENGKAP_VIDEO_YOUTUBE]` dengan informasi video kelompok kalian.
+**PETUNJUK:** Ganti semua teks di dalam tanda kurung siku `[ ... ]` dengan informasi proyek yang relevan.
