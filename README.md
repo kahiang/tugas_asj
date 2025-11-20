@@ -1,26 +1,45 @@
-# 📄 TEMPLATE LAPORAN PROYEK: PENGEMBANGAN WEB SERVER DAN APLIKASI SEDERHANA
+# 💻 TEMPLATE LAPORAN PROYEK: PENGEMBANGAN WEB SERVER DAN APLIKASI SEDERHANA
 
 **Proyek:** [JUDUL PROYEK KELOMPOK KALIAN]
 
-Proyek ini dibuat untuk memenuhi tugas mata pelajaran **[NAMA MATA PELAJARAN]** mengenai *deployment* dan konfigurasi *web server* serta implementasi keamanan SSL.
+Proyek ini dibuat untuk memenuhi tugas mata pelajaran **Administrasi Sistem Jaringan (ASJ)**, yang merupakan salah satu elemen Capaian Pembelajaran Konsentrasi Keahlian Teknik Komputer dan Jaringan (**CP KKTKJ**) pada program TJKT. Proyek ini berfokus pada implementasi layanan Web Server, konfigurasi PHP, dan pengamanan koneksi menggunakan SSL/HTTPS.
 
 ---
 
-### 1. Informasi Kelompok dan Spesifikasi Server
+### 1. 👥 Informasi Kelompok dan Spesifikasi Lingkungan Praktik
 
-| Peran | Nama Anggota | Halaman Profil di Server (Link Lokal) |
+#### 1.1. Informasi Kelompok
+
+| Peran | Nama Lengkap | Kelas |
 | :--- | :--- | :--- |
-| **Ketua Kelompok** | [Nama Lengkap Ketua] | `https://[IP_SERVER]/[nama_ketua]` |
-| Anggota 1 | [Nama Lengkap Anggota 1] | `https://[IP_SERVER]/[nama_anggota_1]` |
-| Anggota 2 | [Nama Lengkap Anggota 2] | `https://[IP_SERVER]/[nama_anggota_2]` |
+| **Ketua Kelompok** | [Nama Lengkap Ketua] | [Kelas Kalian] |
+| Anggota 1 | [Nama Lengkap Anggota 1] | [Kelas Kalian] |
+| Anggota 2 | [Nama Lengkap Anggota 2] | [Kelas Kalian] |
+| **Nama Sekolah/Institusi** | [Nama Sekolah/Institusi Kalian] | |
+
+#### 1.2. Spesifikasi Alat dan Bahan (Host) 🛠️
+
+| Komponen | Deskripsi / Versi |
+| :--- | :--- |
+| **Virtualisasi** | [Versi VMware Workstation yang Digunakan, contoh: VMware Workstation 17 Pro] |
+| **Sistem Operasi Host** | [OS yang digunakan di laptop/PC utama, contoh: Windows 11 / macOS Sonoma] |
+| **RAM Host (Minimal)** | [RAM Minimal yang digunakan di Host, contoh: 8 GB] |
+| **CPU Host** | [Tuliskan jenis/seri CPU, contoh: Intel Core i5 Generasi ke-10] |
+
+#### 1.3. Spesifikasi Server Virtual (VM) 🖥️
+
+| Spesifikasi | Detail |
+| :--- | :--- |
+| **Sistem Operasi Tamu (Guest OS)** | Debian Trixie (12.x) |
+| **Alamat IP Server** | `[Tuliskan Alamat IP Lokal Server]` |
+| **RAM VM** | [Jumlah RAM yang dialokasikan untuk VM, contoh: 2 GB] |
+| **vCPU** | [Jumlah Core CPU yang dialokasikan untuk VM, contoh: 2 Core] |
 | **Web Server yang Dipilih** | **[Apache2 / Nginx / OpenLiteSpeed]** |
 | **Versi PHP yang Dipakai** | **[mod_php / php-fpm / lsphp]** |
-| **Alamat IP Server** | `[Tuliskan Alamat IP Lokal Server]` |
-| **Sistem Operasi** | Debian Trixie (12.x) |
 
 ---
 
-### 2. Dokumentasi Teknis dan Langkah-Langkah Pengerjaan
+### 2. 📝 Dokumentasi Teknis dan Langkah-Langkah Pengerjaan
 
 #### 2.1. Persiapan Dasar (Debian Trixie di VMware)
 
@@ -28,9 +47,9 @@ Proyek ini dibuat untuk memenuhi tugas mata pelajaran **[NAMA MATA PELAJARAN]** 
     ```bash
     sudo apt update && sudo apt upgrade -y
     ```
-2.  Memastikan konfigurasi jaringan (NAT/Host-Only) sudah benar.
+2.  Memastikan konfigurasi jaringan (Bridge/NAT/Host-Only) sudah benar.
 
-#### 2.2. Instalasi dan Konfigurasi Web Server
+#### 2.2. Instalasi dan Konfigurasi Web Server 🌐
 
 Kami menggunakan **[NAMA WEB SERVER]**. Berikut langkah-langkah utamanya:
 
@@ -39,9 +58,9 @@ Kami menggunakan **[NAMA WEB SERVER]**. Berikut langkah-langkah utamanya:
     # [Tuliskan perintah instalasi Web Server Kalian, contoh: sudo apt install nginx -y]
     ```
 * **Konfigurasi Virtual Host/Server Block:**
-    [Jelaskan secara singkat penyesuaian konfigurasi yang Kalian lakukan pada file utama].
+    [Jelaskan secara singkat penyesuaian konfigurasi yang Kalian lakukan pada file utama, misalnya penentuan Document Root dan port.]
 
-#### 2.3. Konfigurasi PHP
+#### 2.3. Konfigurasi PHP 🐘
 
 Kami menggunakan **[JENIS PHP: mod_php / php-fpm / lsphp]** untuk mengintegrasikan PHP dengan *Web Server*.
 
@@ -51,51 +70,56 @@ Kami menggunakan **[JENIS PHP: mod_php / php-fpm / lsphp]** untuk mengintegrasik
     sudo apt install php-fpm php-mysql
     ```
 * **Integrasi:**
-    [Jelaskan langkah-langkah integrasi].
+    [Jelaskan langkah-langkah integrasi antara PHP dengan Web Server yang Kalian pilih.]
 
-#### 2.4. Implementasi SSL (HTTPS)
+#### 2.4. Implementasi SSL (HTTPS) 🔒
 
 Untuk mengaktifkan akses HTTPS, kami membuat *self-signed certificate*.
 
 1.  Membuat direktori untuk *certificate*.
 2.  Membuat *Key* dan *Certificate* menggunakan OpenSSL.
-3.  Memodifikasi konfigurasi *Web Server* untuk menggunakan port **443** dan menunjuk ke *certificate* yang telah dibuat.
+3.  Memodifikasi konfigurasi *Web Server* untuk menggunakan port **443** dan menunjuk ke *certificate* yang telah dibuat, serta memastikan akses dapat dilakukan melalui `https://[IP_SERVER]`.
 
 ---
 
-### 3. Analisis Web Server
+### 3. 📊 Analisis Web Server
 
 Berdasarkan pengalaman kami dalam proyek ini, berikut adalah analisis kelebihan dan kekurangan dari *Web Server* yang kami gunakan:
 
-| Aspek | Kelebihan ([NAMA WEB SERVER]) | Kekurangan ([NAMA WEB SERVER]) |
+| Aspek | Kelebihan ([NAMA WEB SERVER]) 👍 | Kekurangan ([NAMA WEB SERVER]) 👎 |
 | :--- | :--- | :--- |
-| **Performa & Kecepatan** | [Tuliskan kelebihannya. Contoh: Mampu menangani banyak koneksi bersamaan (Nginx).] | [Tuliskan kekurangannya. Contoh: Kurang efisien dalam melayani konten statis (Apache).] |
-| **Kemudahan Konfigurasi**| [Tuliskan kelebihannya. Contoh: Konfigurasi yang terpusat dan modular (Apache).] | [Tuliskan kekurangannya. Contoh: Kurva belajar yang lebih curam karena sintaks baru (Nginx).] |
+| **Performa & Kecepatan** | [Tuliskan kelebihannya.] | [Tuliskan kekurangannya.] |
+| **Kemudahan Konfigurasi**| [Tuliskan kelebihannya.] | [Tuliskan kekurangannya.] |
 | **Fitur & Modularitas** | [Tuliskan kelebihannya.] | [Tuliskan kekurangannya.] |
 
 ---
 
-### 4. Refleksi Proyek: Kesan dan Kendala
+### 4. 🧠 Refleksi Proyek: Kesan dan Kendala
 
-#### 4.1. Kesan Selama Proses Pengerjaan
+#### 4.1. Kesan Selama Proses Pengerjaan ✨
 
-[Tuliskan kesan anggota kelompok, misalnya: "Kami sangat senang karena proyek ini memberikan pemahaman langsung tentang proses deployment server yang sesungguhnya. Proses kolaborasi di GitHub juga mengajarkan pentingnya version control."]
+[Tuliskan kesan anggota kelompok, misalnya: "Kami merasa mendapatkan banyak ilmu baru, terutama dalam praktik Version Control menggunakan Git dan GitHub yang belum pernah kami lakukan sebelumnya."]
 
-#### 4.2. Kendala dan Solusi yang Diterapkan
+#### 4.2. Kendala dan Solusi yang Diterapkan 💡
 
-| Kendala yang Kalian Hadapi | Solusi yang Ditemukan |
+| Kendala yang Kalian Hadapi 🚧 | Solusi yang Ditemukan ✅ |
 | :--- | :--- |
-| [Contoh: Kesulitan mengintegrasikan PHP-FPM dengan Nginx.] | [Contoh: Kami mencari referensi dokumentasi resmi Nginx dan memastikan socket file PHP-FPM memiliki izin yang benar.] |
 | [Tuliskan kendala teknis atau kolaborasi lain yang Kalian hadapi.] | [Jelaskan solusi spesifik Kalian.] |
 
 ---
 
-### 5. Dokumentasi Video Pengerjaan
+### 5. 📂 Dokumentasi Konten Website
+
+Seluruh *source code* (Halaman Utama dan Halaman Profil) yang berada di *document root* server telah disalin dan di-*commit* ke dalam folder `/html` di *repository* GitHub ini.
+
+---
+
+### 6. 🎬 Dokumentasi Video Pengerjaan
 
 Seluruh proses pengerjaan telah direkam dan diunggah ke YouTube.
 
 **Link Video YouTube:**
 
-[![Thumbnail Video Pengerjaan](https://img.youtube.com/vi/**[ID_VIDEO_YOUTUBE_KALIAN]**/0.jpg)](**[LINK_LENGKAP_VIDEO_YOUTUBE_KALIAN]**)
+[![Thumbnail Video Pengerjaan](https://img.youtube.com/vi/1-qlNtQS1OA/0.jpg)](https://www.youtube.com/watch?v=1-qlNtQS1OA)
 
 **PETUNJUK:** Ganti semua teks di dalam tanda kurung siku `[ ... ]` dengan informasi proyek yang relevan.
